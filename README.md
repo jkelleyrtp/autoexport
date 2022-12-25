@@ -1,5 +1,22 @@
 # Autoexport
 
+<div>
+  <a href="https://crates.io/crates/autoexport">
+    <img src="https://img.shields.io/crates/v/autoexport.svg?style=flat-square"
+    alt="Crates.io version" />
+  </a>
+  <!-- Downloads -->
+  <a href="https://crates.io/crates/autoexport">
+    <img src="https://img.shields.io/crates/d/autoexport.svg?style=flat-square"
+      alt="Download" />
+  </a>
+  <!-- docs -->
+  <a href="https://docs.rs/autoexport">
+    <img src="https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square"
+      alt="docs.rs docs" />
+  </a>
+</div>
+
 Automatically export a series of modules from a top-level module.
 
 The modules must be defined within the body of the macro - autoexport does not know about modules inside files. This means
