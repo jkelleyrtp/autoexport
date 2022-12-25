@@ -32,7 +32,7 @@ use syn::{
 /// }
 /// ```
 #[proc_macro_attribute]
-pub fn inline_props(_args: proc_macro::TokenStream, s: TokenStream) -> TokenStream {
+pub fn export(_args: proc_macro::TokenStream, s: TokenStream) -> TokenStream {
     match syn::parse::<ExportMod>(s) {
         Err(e) => e.to_compile_error().into(),
         Ok(s) => s.to_token_stream().into(),
@@ -77,5 +77,6 @@ fn write_module_to_stream(item: &ItemMod, tokens: &mut proc_macro2::TokenStream)
     tokens.append_all(item.semi);
 
     let name = &item.ident;
-    tokens.append_all(quote! { pub use #name::*; });
+    tokens.append_all(Some(&item.vis));
+    tokens.append_all(quote! { use #name::*; });
 }
