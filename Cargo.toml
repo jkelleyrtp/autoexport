@@ -1,0 +1,20 @@
+[package]
+name = "autoexport"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jonathan Kelley <jon@dioxuslabs.com>"]
+description = "Automatically use all the modules laid out in a top-level mod"
+license = "MIT OR Apache-2.0"
+keywords = ["derive", "macro", "mod", "export", "use"]
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+proc-macro2 = { version = "1.0" }
+quote = "1.0"
+syn = { version = "1.0", features = ["full", "extra-traits"] }
+
+
+[lib]
+proc-macro = true
